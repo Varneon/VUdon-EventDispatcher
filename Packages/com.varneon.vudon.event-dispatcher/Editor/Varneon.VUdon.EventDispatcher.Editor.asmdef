@@ -1,10 +1,11 @@
 {
-    "name": "Varneon.VUdon.RepositoryTemplate.Runtime",
+    "name": "Varneon.VUdon.EventDispatcher.Editor",
     "references": [
-        "UdonSharp.Runtime",
-        "VRC.Udon"
+        "Varneon.VUdon.EventDispatcher.Runtime"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
