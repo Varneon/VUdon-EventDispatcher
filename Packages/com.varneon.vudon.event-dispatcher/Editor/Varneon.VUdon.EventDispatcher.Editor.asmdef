@@ -1,7 +1,11 @@
 {
     "name": "Varneon.VUdon.EventDispatcher.Editor",
     "references": [
-        "Varneon.VUdon.EventDispatcher.Runtime"
+        "Varneon.VUdon.EventDispatcher.Runtime",
+        "Varneon.V-Inspector.Editor",
+        "Varneon.V-Inspector.Runtime",
+        "Varneon.NeonInspector.Editor",
+        "UdonSharp.Runtime"
     ],
     "includePlatforms": [
         "Editor"

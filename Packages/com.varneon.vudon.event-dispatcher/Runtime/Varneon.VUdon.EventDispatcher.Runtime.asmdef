@@ -2,7 +2,9 @@
     "name": "Varneon.VUdon.EventDispatcher.Runtime",
     "references": [
         "UdonSharp.Runtime",
-        "VRC.Udon"
+        "VRC.Udon",
+        "Varneon.VUdon.Common.Runtime",
+        "Varneon.V-Inspector.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
