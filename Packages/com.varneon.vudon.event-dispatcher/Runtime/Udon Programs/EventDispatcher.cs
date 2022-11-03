@@ -62,21 +62,21 @@ namespace Varneon.VUdon.EventDispatcher
         /// <param name="eventType">Event type which the handler gets added for</param>
         /// <param name="handler">Handler behaviour with the handler method which will be called</param>
         [PublicAPI]
-        public void _AddHandler(VRCUpdateEventType eventType, UdonSharpBehaviour handler)
+        public void AddHandler(VRCUpdateEventType eventType, UdonSharpBehaviour handler)
         {
             switch (eventType)
             {
                 case VRCUpdateEventType.FixedUpdate:
-                    _AddFixedUpdateHandler(handler);
+                    AddFixedUpdateHandler(handler);
                     break;
                 case VRCUpdateEventType.Update:
-                    _AddUpdateHandler(handler);
+                    AddUpdateHandler(handler);
                     break;
                 case VRCUpdateEventType.LateUpdate:
-                    _AddLateUpdateHandler(handler);
+                    AddLateUpdateHandler(handler);
                     break;
                 case VRCUpdateEventType.PostLateUpdate:
-                    _AddPostLateUpdateHandler(handler);
+                    AddPostLateUpdateHandler(handler);
                     break;
             }
         }
@@ -87,21 +87,21 @@ namespace Varneon.VUdon.EventDispatcher
         /// <param name="eventType">Event type which the handler gets removed for</param>
         /// <param name="handler">Handler behaviour</param>
         [PublicAPI]
-        public void _RemoveHandler(VRCUpdateEventType eventType, UdonSharpBehaviour handler)
+        public void RemoveHandler(VRCUpdateEventType eventType, UdonSharpBehaviour handler)
         {
             switch (eventType)
             {
                 case VRCUpdateEventType.FixedUpdate:
-                    _RemoveFixedUpdateHandler(handler);
+                    RemoveFixedUpdateHandler(handler);
                     break;
                 case VRCUpdateEventType.Update:
-                    _RemoveUpdateHandler(handler);
+                    RemoveUpdateHandler(handler);
                     break;
                 case VRCUpdateEventType.LateUpdate:
-                    _RemoveLateUpdateHandler(handler);
+                    RemoveLateUpdateHandler(handler);
                     break;
                 case VRCUpdateEventType.PostLateUpdate:
-                    _RemovePostLateUpdateHandler(handler);
+                    RemovePostLateUpdateHandler(handler);
                     break;
             }
         }
@@ -113,15 +113,15 @@ namespace Varneon.VUdon.EventDispatcher
         /// <param name="handler">Handler behaviour</param>
         /// <param name="active">Should the handler be active or not</param>
         [PublicAPI]
-        public void _SetHandlerActive(VRCUpdateEventType eventType, UdonSharpBehaviour handler, bool active)
+        public void SetHandlerActive(VRCUpdateEventType eventType, UdonSharpBehaviour handler, bool active)
         {
             if (active)
             {
-                _AddHandler(eventType, handler);
+                AddHandler(eventType, handler);
             }
             else
             {
-                _RemoveHandler(eventType, handler);
+                RemoveHandler(eventType, handler);
             }
         }
 
@@ -130,7 +130,7 @@ namespace Varneon.VUdon.EventDispatcher
         /// </summary>
         /// <param name="handler">Handler behaviour with _FixedUpdateHandler() which will be called</param>
         [PublicAPI]
-        public void _AddFixedUpdateHandler(UdonSharpBehaviour handler)
+        public void AddFixedUpdateHandler(UdonSharpBehaviour handler)
         {
             hasFixedUpdateHandlers = (fixedUpdateHandlerCount = (fixedUpdateHandlers = fixedUpdateHandlers.AddUnique(handler)).Length) > 0;
         }
@@ -140,7 +140,7 @@ namespace Varneon.VUdon.EventDispatcher
         /// </summary>
         /// <param name="handler">Handler behaviour</param>
         [PublicAPI]
-        public void _RemoveFixedUpdateHandler(UdonSharpBehaviour handler)
+        public void RemoveFixedUpdateHandler(UdonSharpBehaviour handler)
         {
             if (fixedUpdateHandlerCount > 0) { hasFixedUpdateHandlers = (fixedUpdateHandlerCount = (fixedUpdateHandlers = fixedUpdateHandlers.Remove(handler)).Length) > 0; }
         }
@@ -150,7 +150,7 @@ namespace Varneon.VUdon.EventDispatcher
         /// </summary>
         /// <param name="handler">Handler behaviour with _UpdateHandler() which will be called</param>
         [PublicAPI]
-        public void _AddUpdateHandler(UdonSharpBehaviour handler)
+        public void AddUpdateHandler(UdonSharpBehaviour handler)
         {
             hasUpdateHandlers = (updateHandlerCount = (updateHandlers = updateHandlers.AddUnique(handler)).Length) > 0;
         }
@@ -160,7 +160,7 @@ namespace Varneon.VUdon.EventDispatcher
         /// </summary>
         /// <param name="handler">Handler behaviour</param>
         [PublicAPI]
-        public void _RemoveUpdateHandler(UdonSharpBehaviour handler)
+        public void RemoveUpdateHandler(UdonSharpBehaviour handler)
         {
             if (updateHandlerCount > 0) { hasUpdateHandlers = (updateHandlerCount = (updateHandlers = updateHandlers.Remove(handler)).Length) > 0; }
         }
@@ -170,7 +170,7 @@ namespace Varneon.VUdon.EventDispatcher
         /// </summary>
         /// <param name="handler">Handler behaviour with _LateUpdateHandler() which will be called</param>
         [PublicAPI]
-        public void _AddLateUpdateHandler(UdonSharpBehaviour handler)
+        public void AddLateUpdateHandler(UdonSharpBehaviour handler)
         {
             hasLateUpdateHandlers = (lateUpdateHandlerCount = (lateUpdateHandlers = lateUpdateHandlers.AddUnique(handler)).Length) > 0;
         }
@@ -180,7 +180,7 @@ namespace Varneon.VUdon.EventDispatcher
         /// </summary>
         /// <param name="handler">Handler behaviour</param>
         [PublicAPI]
-        public void _RemoveLateUpdateHandler(UdonSharpBehaviour handler)
+        public void RemoveLateUpdateHandler(UdonSharpBehaviour handler)
         {
             if (lateUpdateHandlerCount > 0) { hasLateUpdateHandlers = (lateUpdateHandlerCount = (lateUpdateHandlers = lateUpdateHandlers.Remove(handler)).Length) > 0; }
         }
@@ -190,7 +190,7 @@ namespace Varneon.VUdon.EventDispatcher
         /// </summary>
         /// <param name="handler">Handler behaviour with _PostLateUpdateHandler() which will be called</param>
         [PublicAPI]
-        public void _AddPostLateUpdateHandler(UdonSharpBehaviour handler)
+        public void AddPostLateUpdateHandler(UdonSharpBehaviour handler)
         {
             hasPostLateUpdateHandlers = (postLateUpdateHandlerCount = (postLateUpdateHandlers = postLateUpdateHandlers.AddUnique(handler)).Length) > 0;
         }
@@ -200,7 +200,7 @@ namespace Varneon.VUdon.EventDispatcher
         /// </summary>
         /// <param name="handler">Handler behaviour</param>
         [PublicAPI]
-        public void _RemovePostLateUpdateHandler(UdonSharpBehaviour handler)
+        public void RemovePostLateUpdateHandler(UdonSharpBehaviour handler)
         {
             if (postLateUpdateHandlerCount > 0) { hasPostLateUpdateHandlers = (postLateUpdateHandlerCount = (postLateUpdateHandlers = postLateUpdateHandlers.Remove(handler)).Length) > 0; }
         }
