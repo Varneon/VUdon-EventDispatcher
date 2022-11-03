@@ -10,6 +10,15 @@ Dispatcher for allowing UdonSharpBehaviours to receive delegated update events
 
 <details><summary>
 
+### Dependencies - `4`</summary>
+
+* [VUdon - Array Extensions](https://github.com/Varneon/VUdon-ArrayExtensions)
+* [VUdon - Common](https://github.com/Varneon/VUdon-Common)
+* [Neon Inspector](https://github.com/Varneon/Neon-Inspector)
+  * [V-Inspector](https://github.com/Varneon/V-Inspector)
+
+</details><details><summary>
+
 ### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
 
 > 1. Download `com.varneon.vudon.event-dispatcher.zip` from [here](https://github.com/Varneon/VUdon-EventDispatcher/releases/latest)
