@@ -4,7 +4,8 @@
         "UdonSharp.Runtime",
         "VRC.Udon",
         "Varneon.VUdon.Common.Runtime",
-        "Varneon.V-Inspector.Runtime"
+        "Varneon.V-Inspector.Runtime",
+        "Varneon.VUdon.ArrayExtensions.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

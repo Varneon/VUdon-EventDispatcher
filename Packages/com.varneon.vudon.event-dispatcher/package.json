@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "com.vrchat.udonsharp": "1.0.1",
-    "com.varneon.neon-inspector": "0.0.1"
+    "com.varneon.neon-inspector": "0.0.1",
+    "com.varneon.vudon.array-extensions": "0.2.0"
   },
   "vpmDependencies": {
     "com.vrchat.udonsharp": "1.x.x",
-    "com.varneon.neon-inspector": "0.0.1"
+    "com.varneon.neon-inspector": "0.0.1",
+    "com.varneon.vudon.array-extensions": "0.2.0"
   }
 }
