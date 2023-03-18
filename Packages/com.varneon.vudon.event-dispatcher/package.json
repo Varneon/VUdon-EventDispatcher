@@ -17,7 +17,7 @@
   },
   "vpmDependencies": {
     "com.vrchat.udonsharp": "1.x.x",
-    "com.varneon.neon-inspector": "0.0.1",
+    "com.varneon.neon-inspector": ">=0.0.1 <1.0.0",
     "com.varneon.vudon.array-extensions": ">=0.3.0 <1.0.0",
     "com.varneon.vudon.common": ">=0.1.0"
   },
