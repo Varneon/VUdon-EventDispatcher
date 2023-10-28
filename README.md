@@ -4,36 +4,25 @@
 
 </div>
 
-Dispatcher for allowing UdonSharpBehaviours to receive delegated update events
+Dispatcher for delegating update events to UdonBehaviours.
+
+![image](https://github.com/Varneon/VUdon-EventDispatcher/assets/26690821/b7e7b630-753f-4d7a-8888-97e82b5b7b4a)
 
 # Installation
 
 <details><summary>
 
-### Dependencies - `4`</summary>
+### Dependencies - `3`</summary>
 
 * [VUdon - Array Extensions](https://github.com/Varneon/VUdon-ArrayExtensions)
 * [VUdon - Common](https://github.com/Varneon/VUdon-Common)
-* [Neon Inspector](https://github.com/Varneon/Neon-Inspector)
-  * [V-Inspector](https://github.com/Varneon/V-Inspector)
+* [VUdon - Editors](https://github.com/Varneon/VUdon-Editors)
 
 </details><details><summary>
 
 ### Import with [VRChat Creator Companion](https://vcc.docs.vrchat.com/vpm/packages#user-packages):</summary>
 
-> 1. Download `com.varneon.vudon.event-dispatcher.zip` from [here](https://github.com/Varneon/VUdon-EventDispatcher/releases/latest)
-> 2. Unpack the .zip somewhere
-> 3. In VRChat Creator Companion, navigate to `Settings` > `User Packages` > `Add`
-> 4. Navigate to the unpacked folder, `com.varneon.vudon.event-dispatcher` and click `Select Folder`
-> 5. `VUdon - Event Dispatcher` should now be visible under `Local User Packages` in the project view in VRChat Creator Companion
-> 6. Click `Add`
-
-</details><details><summary>
-
-### Import with [Unity Package Manager (git)](https://docs.unity3d.com/2019.4/Documentation/Manual/upm-ui-giturl.html):</summary>
-
-> 1. In the Unity toolbar, select `Window` > `Package Manager` > `[+]` > `Add package from git URL...` 
-> 2. Copy and paste the following link into the URL input field: <pre lang="md">https://github.com/Varneon/VUdon-EventDispatcher.git?path=/Packages/com.varneon.vudon.event-dispatcher</pre>
+> Coming Soon™
 
 </details><details><summary>
 
@@ -48,8 +37,8 @@ Dispatcher for allowing UdonSharpBehaviours to receive delegated update events
 
 ## Developed by Varneon with :hearts:
 
-![Twitter Follow](https://img.shields.io/twitter/follow/Varneon?color=%231c9cea&label=%40Varneon&logo=Twitter&style=for-the-badge)
-![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCKTxeXy7gyaxr-YA9qGWOYg?color=%23FF0000&label=Varneon&logo=YouTube&style=for-the-badge)
-![GitHub followers](https://img.shields.io/github/followers/Varneon?color=%23303030&label=Varneon&logo=GitHub&style=for-the-badge)
+[![Twitter Follow](https://img.shields.io/static/v1?style=for-the-badge&label=@Varneon&message=5K&color=1b9df0&logo=twitter)](https://twitter.com/Varneon)
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCKTxeXy7gyaxr-YA9qGWOYg?color=%23FF0000&label=Varneon&logo=YouTube&style=for-the-badge)](https://www.youtube.com/Varneon)
+[![GitHub followers](https://img.shields.io/github/followers/Varneon?color=%23303030&label=Varneon&logo=GitHub&style=for-the-badge)](https://github.com/Varneon)
 
 </div>
