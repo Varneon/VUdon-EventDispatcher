@@ -1,5 +1,6 @@
 ﻿using JetBrains.Annotations;
 using UdonSharp;
+using UnityEngine;
 using Varneon.VUdon.ArrayExtensions;
 using Varneon.VUdon.Common.VRCEnums;
 using VRC.SDKBase;
@@ -13,6 +14,7 @@ namespace Varneon.VUdon.EventDispatcher
     /// <remarks>
     /// Default execution order of the dispatcher is 0
     /// </remarks>
+    [DisallowMultipleComponent]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class EventDispatcher : UdonSharpBehaviour
     {
