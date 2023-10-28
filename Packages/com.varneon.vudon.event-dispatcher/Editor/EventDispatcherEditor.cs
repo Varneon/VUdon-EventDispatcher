@@ -1,7 +1,6 @@
-﻿using UdonSharp;
-using UnityEditor;
-using UnityEngine.UIElements;
-using Varneon.VInspector;
+﻿using UnityEditor;
+using UnityEngine;
+using Varneon.VUdon.Editors.Editor;
 
 namespace Varneon.VUdon.EventDispatcher.Editor
 {
@@ -9,20 +8,70 @@ namespace Varneon.VUdon.EventDispatcher.Editor
     /// Custom inspector for EventDispatcher prefab
     /// </summary>
     [CustomEditor(typeof(EventDispatcher))]
-    [IgnoreFieldsOfType(typeof(UdonSharpBehaviour))]
-    public class EventDispatcherEditor : NeonInspector.NeonInspector
+    public class EventDispatcherEditor : InspectorBase
     {
-        protected override void OnInspectorVisualTreeAssetCloned(VisualElement root)
+        [SerializeField]
+        private Texture2D headerIcon;
+
+        protected override InspectorHeader Header => new InspectorHeaderBuilder()
+            .WithTitle("VUdon - EventDispatcher")
+            .WithDescription("Dispatcher for allowing UdonSharpBehaviours to receive delegated update events")
+            .WithIcon(headerIcon)
+            .WithURL("GitHub", "https://github.com/Varneon/VUdon-EventDispatcher")
+            .Build();
+
+        private GUIStyle wrappedRichTextStyle;
+
+        private bool apiMethodsExpanded;
+
+        protected override void OnEnable()
         {
-            VisualElement inspectorPanel = root.Q("InspectorPanel");
+            base.OnEnable();
 
-            Foldout apiFoldout = new Foldout() { name = "Foldout_API", text = "API", value = false };
+            wrappedRichTextStyle = new GUIStyle()
+            {
+                normal =
+                {
+                    textColor = Color.white
+                },
+                wordWrap = true,
+                richText = true,
+                padding = new RectOffset(2, 2, 1, 2)
+            };
+        }
 
-            inspectorPanel.Add(apiFoldout);
+        protected override void OnPreDrawFields()
+        {
+            if(apiMethodsExpanded = EditorGUILayout.BeginFoldoutHeaderGroup(apiMethodsExpanded, "API Methods"))
+            {
+                GUI.color = Color.black;
 
-            APIDocumentationBuilder.BuildAPIDocumentation(apiFoldout, typeof(EventDispatcher));
+                Rect rect = EditorGUILayout.BeginVertical(EditorStyles.helpBox);
 
-            base.OnInspectorVisualTreeAssetCloned(root);
+                if (EditorDarkMode) { GUI.Box(rect, string.Empty); }
+
+                GUI.color = Color.white;
+
+                EditorGUI.indentLevel++;
+
+                EditorGUILayout.LabelField("<color=#dcdcaa>AddHandler</color>(<color=#b8d7a3>VRCUpdateEventType</color>, <color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>RemoveHandler</color>(<color=#b8d7a3>VRCUpdateEventType</color>, <color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>SetHandlerActive</color>(<color=#b8d7a3>VRCUpdateEventType</color>, <color=#b8d7a3>IUdonEventReceiver</color>, <color=#569cd6>bool</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>AddFixedUpdateHandler</color>(<color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>RemoveFixedUpdateHandler</color>(<color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>AddUpdateHandler</color>(<color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>RemoveUpdateHandler</color>(<color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>AddLateUpdateHandler</color>(<color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>RemoveLateUpdateHandler</color>(<color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>AddPostLateUpdateHandler</color>(<color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+                EditorGUILayout.LabelField("<color=#dcdcaa>RemovePostLateUpdateHandler</color>(<color=#b8d7a3>IUdonEventReceiver</color>)", wrappedRichTextStyle);
+
+                EditorGUI.indentLevel--;
+
+                EditorGUILayout.EndVertical();
+            }
+
+            EditorGUILayout.EndFoldoutHeaderGroup();
         }
     }
 }
