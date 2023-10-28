@@ -10,13 +10,13 @@
     "url": "https://github.com/Varneon"
   },
   "dependencies": {
-    "com.vrchat.udonsharp": "1.0.1",
+    "com.vrchat.worlds": "3.4.0",
     "com.varneon.neon-inspector": "0.0.1",
     "com.varneon.vudon.array-extensions": "0.3.0",
     "com.varneon.vudon.common": "0.1.0"
   },
   "vpmDependencies": {
-    "com.vrchat.udonsharp": "1.x.x",
+    "com.vrchat.worlds": ">=3.4.0 <4.0.0",
     "com.varneon.neon-inspector": ">=0.0.1 <1.0.0",
     "com.varneon.vudon.array-extensions": ">=0.3.0 <1.0.0",
     "com.varneon.vudon.common": ">=0.1.0"
