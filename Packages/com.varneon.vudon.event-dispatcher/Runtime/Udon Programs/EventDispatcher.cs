@@ -14,6 +14,7 @@ namespace Varneon.VUdon.EventDispatcher
     /// <remarks>
     /// Default execution order of the dispatcher is 0
     /// </remarks>
+    [ExcludeFromPreset]
     [DisallowMultipleComponent]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class EventDispatcher : UdonSharpBehaviour
