@@ -14,6 +14,7 @@ namespace Varneon.VUdon.EventDispatcher
     /// <remarks>
     /// Default execution order of the dispatcher is 0
     /// </remarks>
+    [AddComponentMenu("VUdon/EventDispatcher")]
     [ExcludeFromPreset]
     [DisallowMultipleComponent]
     [HelpURL("https://github.com/Varneon/VUdon-EventDispatcher")]
