@@ -15,7 +15,7 @@ namespace Varneon.VUdon.EventDispatcher.Editor
 
         protected override InspectorHeader Header => new InspectorHeaderBuilder()
             .WithTitle("VUdon - EventDispatcher")
-            .WithDescription("Dispatcher for allowing UdonSharpBehaviours to receive delegated update events")
+            .WithDescription("Dispatcher for delegating update events to UdonBehaviours")
             .WithIcon(headerIcon)
             .WithURL("GitHub", "https://github.com/Varneon/VUdon-EventDispatcher")
             .Build();
