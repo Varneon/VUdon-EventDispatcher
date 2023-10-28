@@ -11,14 +11,14 @@
   },
   "dependencies": {
     "com.vrchat.worlds": "3.4.0",
-    "com.varneon.vudon.array-extensions": "0.3.0",
     "com.varneon.vudon.editors": "0.1.0",
+    "com.varneon.vudon.array-extensions": "0.3.1",
     "com.varneon.vudon.common": "0.1.0"
   },
   "vpmDependencies": {
     "com.vrchat.worlds": ">=3.4.0 <4.0.0",
-    "com.varneon.vudon.array-extensions": ">=0.3.0 <1.0.0",
     "com.varneon.vudon.editors": ">=0.1.0-alpha.8 <1.0.0",
+    "com.varneon.vudon.array-extensions": ">=0.3.1 <1.0.0",
     "com.varneon.vudon.common": ">=0.1.0"
   },
   "resolutionStrategy": "highestMinor"
