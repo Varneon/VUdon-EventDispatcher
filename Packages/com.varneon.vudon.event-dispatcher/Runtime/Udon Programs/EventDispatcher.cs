@@ -16,6 +16,7 @@ namespace Varneon.VUdon.EventDispatcher
     /// </remarks>
     [ExcludeFromPreset]
     [DisallowMultipleComponent]
+    [HelpURL("https://github.com/Varneon/VUdon-EventDispatcher")]
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)]
     public class EventDispatcher : UdonSharpBehaviour
     {
